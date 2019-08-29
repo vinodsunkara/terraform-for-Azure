@@ -64,7 +64,7 @@ resource "azurerm_resource_group" "RG" {
     location = "Central US"
 }
 ```
-So, after combining the provider part and resource part the .tf file looks like below. With this configuration we can simply deploy the Resource Group on Azure.
+So, after combining the provider part and resource part the `.tf` file looks like below. With this configuration we can simply deploy the Resource Group on Azure.
 ```
 # Configure the provider
 provider "azurerm" {
@@ -78,18 +78,18 @@ resource "azurerm_resource_group" "RG" {
 ```
 Initialization
 ---
-* The first command to run for a new configuration is “terraform init” which initializes various local settings and data that will be used by subsequent commands.
+* The first command to run for a new configuration is `“terraform init”` which initializes various local settings and data that will be used by subsequent commands.
 * Please see the link below for more details
 https://www.terraform.io/docs/commands/init.html
 
 Apply Changes
 ---
-With the “terraform plan” command is used to create an execution plan. The output will describe which actions Terraform will take in order to change real infrastructure to match the configuration.
+With the `“terraform plan”` command is used to create an execution plan. The output will describe which actions Terraform will take in order to change real infrastructure to match the configuration.
 With the `“terraform apply”` command is used the make the changes in real infrastructure (like deploying the resources to azure)
 
 Terraform State
 ---
-When Terraform created the resource group it also wrote data into the “terraform.tfstate” file. State keeps track of the IDs of created resources so that Terraform knows what it is managing.
+When Terraform created the resource group it also wrote data into the `“terraform.tfstate”` file. State keeps track of the IDs of created resources so that Terraform knows what it is managing.
 You can inspect the current state using `“terraform state show”`
 
 Destroy
@@ -105,6 +105,9 @@ Output variables, in contrast, are used to get information about the infrastruct
 Terraform uses this dependency information to determine the correct order in which to create the different resources.
 
 In the below example, you can see dependencies which we have to create before creating a Virtual Machine.
+
+Installing a Ubuntu Linux Virtual Machine with all the dependencies using terraform
+---
 
 ```
 # Configure the Microsoft Azure Provider.
